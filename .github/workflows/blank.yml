@@ -41,7 +41,7 @@ jobs:
           key      = "eks/terraform.tfstate"
           region   = "${{ env.AWS_REGION }}"
           encrypt  = true
-          role_arn = "${{ secrets.AWS_STATE_ROLE_ARN }}"
+          assume_role = "{ role_arn = secrets.AWS_STATE_ROLE_ARN }"
           EOF
 
       - name: Terraform Init
@@ -92,7 +92,7 @@ jobs:
           key      = "eks/terraform.tfstate"
           region   = "${{ env.AWS_REGION }}"
           encrypt  = true
-          role_arn = "${{ secrets.AWS_STATE_ROLE_ARN }}"
+          assume_role = "{ role_arn = secrets.AWS_STATE_ROLE_ARN }"
           EOF
 
       - name: Terraform Init
