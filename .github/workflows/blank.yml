@@ -48,6 +48,11 @@ jobs:
         working-directory: ${{ env.TF_WORKING_DIR }}
         run: terraform init -backend-config=backend-ci.hcl
 
+      - name: Debug Terraform Eks Version
+        working-directory: ${{ env.TF_WORKING_DIR }}
+        run: cat terraform/.terraform.lock.hcl | grep -A 3 "eks"
+
+
       - name: Terraform Validate
         working-directory: ${{ env.TF_WORKING_DIR }}
         run: terraform validate
