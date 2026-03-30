@@ -1,3 +1,4 @@
 terraform/backend.hcl
 .DS_Store
 trust-policy.json
+state-policy.json
