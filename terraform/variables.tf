@@ -33,3 +33,8 @@ variable "node_max_count" {
   type        = number
   default     = 3
 }
+
+variable "infra_role_arn" {
+  description = "IAM role ARN for Terraform to assume"
+  type        = string
+}
