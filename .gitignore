@@ -5,3 +5,5 @@ state-trust-policy.json
 state-policy.json
 state-trust-policy-updated.json
 infra-policy.json
+deploy-trust-policy.json
+deploy-policy.json

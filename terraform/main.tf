@@ -55,4 +55,18 @@ module "eks" {
       capacity_type  = "SPOT"
     }
   }
+  access_entries = {
+    github-deploy = {
+      principal_arn = "arn:aws:iam::693104801963:role/github-actions-snippetbox-deploy"
+
+      policy_associations = {
+        admin = {
+          policy_arn = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy"
+          access_scope = {
+            type = "cluster"
+          }
+        }
+      }
+    }
+  }
 }
